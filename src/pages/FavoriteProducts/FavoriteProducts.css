@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.filter-bar__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 2.65rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+
+.filter-bar__text,
+.filter-button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #000000;
+}
+
+.filter-bar__text {
+    font-weight: 400;
+    padding-top: 8.5px;
+}
+
+.filter-button {
+    font-weight: 500;
+}
+
+.filter-button {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #ffffff;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 160px;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #ffffff;
+}

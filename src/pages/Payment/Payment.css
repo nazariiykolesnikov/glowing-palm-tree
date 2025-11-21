@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.payment-section {
+    width: 100%;
+    padding: 2rem;
+    background: #fdf6f9;
+    font-family: "Montserrat", sans-serif;
+}
+
+.payment-container {
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.credit_card_front_side,
+.credit_card_back_side {
+    position: absolute;
+    width: 506px;
+    height: 315px;
+}
+
+.credit_card_front_side {
+    z-index: 1;
+    top: 100px;
+    left: 42px;
+}
+
+.credit_card_back_side {
+    z-index: 0;
+    top: 187px;
+    left: 129px;
+}
+
+.card-bank,
+.card-number,
+.card-holder,
+.card-valid,
+.card-cvv {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: -57.8rem;
+    max-width: 320px;
+    width: 100%;
+}
+
+.payment-form p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+.payment-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.payment-form input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.payment-summary {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.payment-summary strong:last-child {
+    margin-right: -5rem;
+}
+
+.pay-button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+    height: 48px;
+    width: 405px;
+}
+
+.pay-button:hover {
+    background: #ff1493;
+}
+
+.payment__header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+.payment__header p:first-child {
+    position: absolute;
+    top: -30px;
+    left: -958px;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.payment__header p:last-child {
+    position: absolute;
+    color: #999999;
+    top: 25px;
+    left: -958px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+#payment-form__card-number,
+#payment-form__card-number::placeholder {
+    color: #212429;
+}
+
+#payment-form__card-number {
+    border: 2px solid #212429;
+}
+
+#payment-form__cardholder-name,
+#payment-form__expiry-month,
+#payment-form__expiry-year,
+#payment-form__cvv {
+    color: #999999;
+    border: 2px solid #DBE5F1;
+}
+
+#payment-form__card-number,
+#payment-form__cardholder-name,
+#payment-form__expiry-month,
+#payment-form__expiry-year,
+#payment-form__cvv {
+    height: 40px;
+    border-radius: 30px;
+}
+
+#payment-form__card-number,
+#payment-form__cardholder-name {
+    width: 384px !important;
+}
+
+#payment-form__expiry-year,
+#payment-form__cvv,
+#payment-form__card-number {
+    width: 112px;
+}
+
+#payment-form__expiry-month::placeholder,
+#payment-form__cardholder-name::placeholder,
+#payment-form__expiry-year::placeholder,
+#payment-form__cvv::placeholder,
+#payment-form__card-number::placeholder {
+    padding-left: 8px;
+}
+
+#payment-form__expiry-month,
+#payment-form__expiry-year {
+    margin-right: 20px;
+}
+
+#payment-form__expiry-month,
+#payment-form__expiry-year,
+#payment-form__cvv {
+    width: 92px;
+}
+
+.pay-button {
+    border-radius: 30px;
+    height: 48px;
+}
+
+#payment-form__cvv-label {
+    position: relative;
+}
+
+.payment-form__cvv-lock {
+    position: absolute;
+    top: 16px;
+    right: -64px;
+    width: 24px;
+    height: 24px;
+}
+
+.payment-form__cvv-question {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 16px;
+    right: 12px;
+}
+
+.form-row__label {
+    position: relative;
+}
+
+.payment-form__arrow-down {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    left: 55px;
+}

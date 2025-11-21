@@ -11,7 +11,7 @@ const ProductList = ({ products }) => {
                     className={`product-card__container ${product.highlighted ? "highlighted" : ""}`}
                 >
                     <img
-                        src={assets.filled_heart}
+                        src={assets.pink_heart}
                         alt="Favorite"
                         className="product-card__filled_heart-icon"
                     />
@@ -26,17 +26,17 @@ const ProductList = ({ products }) => {
                         className="product-card__image"
                     />
                     <div className="product-card__content">
-            <span
-                className={`product-card__new-price ${
-                    product.priceWithWBWalletWithDiscount ? "discounted" : "normal"
-                }`}
-            >
-              {product.priceWithWBWalletWithDiscount} ₽
-            </span>
+                        <span
+                            className={`product-card__new-price ${
+                                product.priceWithWBWalletWithDiscount ? "discounted" : "normal"
+                            }`}
+                        >
+                            {product.priceWithWBWalletWithDiscount} ₽
+                        </span>
                         {product.priceWithoutWBWalletAndWithoutDiscount && (
-                            <span className="product-card__old-price">
-                {product.priceWithoutWBWalletAndWithoutDiscount.toLocaleString("ru-RU")} ₽
-              </span>
+                             <span className="product-card__old-price">
+                                {product.priceWithoutWBWalletAndWithoutDiscount.toLocaleString("ru-RU")} ₽
+                             </span>
                         )}
                     </div>
                     <p className="product-card__product-name">{product.title}</p>

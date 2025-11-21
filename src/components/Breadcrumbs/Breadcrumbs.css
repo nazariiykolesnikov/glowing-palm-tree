@@ -1,0 +1,38 @@
+
+.breadcrumb {
+    padding: 10px;
+    margin-left: 33px;
+}
+
+.breadcrumb__item {
+    display: inline-block;
+}
+
+.breadcrumb__item:not(:last-of-type)::after {
+    content: "/";
+    margin: 0 5px;
+    color: #cccccc;
+}
+
+.breadcrumb__item-link {
+    font-family: "Montserrat", sans-serif;
+    font-style: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-decoration: none;
+    color: #212429;
+}
+
+.breadcrumb__item-link:hover {
+    text-decoration: underline;
+    color: #212429;
+}
+
+.breadcrumb__item-link--active {
+    font-family: "Montserrat", sans-serif;
+    color: #212429;
+    font-weight: 400;
+    font-size: 12px;
+}

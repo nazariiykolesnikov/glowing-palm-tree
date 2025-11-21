@@ -1,0 +1,56 @@
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 720px) {
+    .i_look_order_gift_wrapping {
+        margin-top: 50px !important;
+        margin-left: -39px;
+        width: 225% !important;
+        height: 270px !important;
+    }
+
+    .i_look_gift_wrapping {
+        width: 503px !important;
+        height: 503px !important;
+        top: -25px;
+        left: -22px !important;
+    }
+
+    .i_look_gift_wrapping__heading {
+        font-size: 30px !important;
+        left: 320px !important;
+        top: -5px !important;
+        max-width: 500px !important;
+    }
+
+    .i_look_gift_wrapping__button {
+        left: 318px !important;
+        top: 134px !important;
+        width: 274px;
+        height: 54px;
+        padding-left: 18px !important;
+        padding-bottom: -18px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .i_look_order_gift_wrapping {
+        width: 7.5%;
+    }
+}
+
+.i_look_gift_wrapping__heading {
+    position: absolute; 
+    left: 521px; 
+    top: 40px;
+    width: 749px;
+    font-size: 56px;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+
+.i_look_order_gift_wrapping {
+    max-width: 3000px;
+    width: 70%;
+}
