@@ -9,15 +9,15 @@
 
 .cart-page__title {
     font-size: 2rem;
-    margin-top: -2.5rem;
+    margin-top: -1.5rem;
     margin-left: 0.6rem;
-    margin-bottom: 5.1rem;
+    margin-bottom: 6.1rem;
     text-align: left;
 }
 
 .cart-page__cart-list__container {
     width: 950px;
-    margin-top: -2rem;
+    margin-top: -5rem;
     background: transparent;
 }
 
@@ -29,7 +29,7 @@
     background: transparent;
     flex-direction: column;
     gap: 2rem;
-    margin-top: -10px;
+    margin-top: 40px;
 }
 
 #cart-page__cart-list__item-text--color {
@@ -305,9 +305,9 @@
     right: 115px;
 }
 
-.horizontal-line {
-    position: relative;
-    top: -6px;
+.horizontal-line__top {
+    position: absolute;
+    top: -36px !important;
     left: 11px;
     height: 1px;
     width: 822px;

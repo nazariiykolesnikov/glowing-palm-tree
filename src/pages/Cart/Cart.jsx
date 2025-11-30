@@ -33,7 +33,7 @@ const Cart = () => {
                 <div className="cart-page__cart-list__wrapper-container">
                     <div className="cart-page__cart-list__wrapper">
                         <section className="cart-page__cart-list__container">
-                            <div className="horizontal-line"></div>
+                            <div className="horizontal-line__top"></div>
                             <ul className="cart-page__cart-list">
                                 { cartItems.map(({
                                               id,

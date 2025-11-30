@@ -2,7 +2,7 @@ const oversize_blue_hoodie_with_non_brushed_piping_01 = "https://i.ibb.co/dJV9s0
 const oversize_blue_hoodie_with_non_brushed_piping_02 = "https://i.ibb.co/GvGYCB41/oversize-blue-hoodie-with-non-brushed-piping-01.webp";
 const oversize_blue_hoodie_with_non_brushed_piping_03 = "https://i.ibb.co/35LgFtbL/oversize-blue-hoodie-with-non-brushed-piping-03.webp";
 
-export const productBigZoomImage = "https://i.ibb.co/GvGYCB41/oversize-blue-hoodie-with-non-brushed-piping-01.webp"
+export const productBigZoomImage = "https://i.ibb.co/dJV9s0Mr/oversize-blue-hoodie-with-non-brushed-piping-02.webp";
 
 export const product_page_mini_images = [
     {
