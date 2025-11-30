@@ -7,6 +7,8 @@ import FavoriteProducts from "./pages/FavoriteProducts/FavoriteProducts.jsx";
 import Payment from "./pages/Payment/Payment.jsx";
 import PopUpProductPreview from "./pages/PopUpProductPreview/PopUpProductPreview.jsx";
 import ProductPage from "./pages/ProductPage/ProductPage.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
+import Sales from "./pages/Sales/Sales.jsx";
 
 const App = () => {
     return (
@@ -16,6 +18,8 @@ const App = () => {
                     <Route path="/product-page" element={<ProductPage/>} />
                     <Route path="/pop-up-product-preview" element={<PopUpProductPreview/>} />
                     <Route path="/payment" element={<Payment/>} />
+                    <Route path="/cart" element={<Cart/>} />
+                    <Route path="/sales" element={<Sales/>} />
                     <Route path="/favorite-products" element={<FavoriteProducts/>} />
                     <Route path="/checkout" element={<Checkout/>} />
                     <Route path="/account-control" element={<AccountControl />} />

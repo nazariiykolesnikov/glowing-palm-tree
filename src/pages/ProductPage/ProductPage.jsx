@@ -2,17 +2,23 @@ import { useState } from "react";
 import './ProductPage.css';
 import { assets } from "../../assets/data/assets.js";
 import { review_images } from "../../assets/data/reviews_images.js";
-const product_preview_image = "https://i.ibb.co/JwCr4bbQ/blue-hoodie-with-honk-embroidery-01.webp";
+import { productBigZoomImage } from "../../assets/data/product-page_mini-images.js";
 import { product_page_mini_images } from "../../assets/data/product-page_mini-images.js";
 import {
-    products_mini_hoodies_part1,
-    products_mini_sweatshirts_part1,
-    products_mini_t_shirts_part_1
+    products_mini_hoodies_p1,
+    products_mini_hoodies_p2,
+    products_mini_hoodies_p3,
+    products_mini_t_shirts_p1,
+    products_mini_t_shirts_p2,
+    products_mini_t_shirts_p3,
+    products_mini_sweatshirts_p1,
+    products_mini_sweatshirts_p2
 } from "../../assets/data/products-mini.js";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.jsx";
+import ProductList from "./ProductList/ProductList.jsx";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import ProductList from "./ProductList/ProductList.jsx";
+
 
 const breadcrumbs = [
     { id: 1, link: "Главная" },
@@ -22,8 +28,19 @@ const breadcrumbs = [
     { id: 5, link: "Джинсы" }
 ];
 
+const productListOptions = [
+    products_mini_hoodies_p1,
+    products_mini_hoodies_p2,
+    products_mini_hoodies_p3,
+    products_mini_t_shirts_p1,
+    products_mini_t_shirts_p2,
+    products_mini_t_shirts_p3,
+    products_mini_sweatshirts_p1,
+    products_mini_sweatshirts_p2
+];
+
 const ProductPage = () => {
-    const [mainImage, setMainImage] = useState(product_preview_image);
+    const [mainImage, setMainImage] = useState(productBigZoomImage);
     const [activeImageId, setActiveImageId] = useState(1);
 
     const handleImageClick = (id, src) => {
@@ -34,151 +51,162 @@ const ProductPage = () => {
     return (
         <>
             <Navbar/>
-            <section className="product-page__section">
+            <div className="product-page__section">
                 <div className="product-page__wrapper">
                     <Breadcrumbs breadcrumbs={breadcrumbs}/>
                     <div className="product-wrapper">
-                        <section className="product-container">
-                            <figure className="product-image">
-                                <img
-                                    className="product-preview-image"
-                                    src={mainImage}
-                                    alt="Футболка с вышивкой “А голову ты дома не забыл?”"
-                                />
-                                <div className="product-image__wrapper">
-                                    <div className="product-mini-images">
-                                        {product_page_mini_images.map(({id, src, alt,idName , className}) => (
-                                            <img
-                                                key={id}
-                                                id={idName}
-                                                className={`${className} ${activeImageId === id ? "active-mini-image" : ""}`}
-                                                src={src}
-                                                alt={alt}
-                                                onClick={() => handleImageClick(id, src)}
-                                            />
-                                        ))}
+                        <div className="product-container">
+                            <div className="product-case">
+                                <div className="product-image">
+                                    <div className="product-image__container">
+                                        <img
+                                            className="product-preview-image"
+                                            src={mainImage}
+                                            alt="Футболка с вышивкой “А голову ты дома не забыл?”"
+                                        />
+                                       <div className="product-image__case">
+                                           {product_page_mini_images.map(({id, src, alt, idName}) => (
+                                               <img
+                                                   key={id}
+                                                   id={idName}
+                                                   className={`${activeImageId === id ? "active-mini-image" : ""}`}
+                                                   src={src}
+                                                   alt={alt}
+                                                   onClick={() => handleImageClick(id, src)}
+                                               />
+                                           ))}
+                                       </div>
                                     </div>
                                 </div>
-                            </figure>
-                            <article className="product-card">
+                            </div>
+                            <div className="product-card">
                                 <div className="product-card__container">
                                     <div className="product-card__wrapper">
-                                        <div className="product-rating" id="product-rating-1">
-                                            {[...Array(5)].map((_, starId) => (
-                                                <img
-                                                    key={starId}
-                                                    src={assets.star_filled_gold}
-                                                    alt="Оценка: звезда"
-                                                    className="product-rating__star"
-                                                />
-                                            ))}
+                                        <div className="product-rating__container">
+                                            <div className="product-rating__wrapper">
+                                                <div className="product-rating">
+                                                    {[...Array(5)].map((_, starId) => (
+                                                        <img
+                                                            key={starId}
+                                                            src={assets.star_filled_gold}
+                                                            alt="Оценка: звезда"
+                                                            className="product-rating__star"
+                                                        />
+                                                    ))}
+                                                </div>
+                                                <h2 className="product-title">
+                                                    Футболка с вышивкой “А голову ты дома не забыл?”
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <h2 className="product-title">
-                                            Футболка с вышивкой “А голову ты дома не забыл?”
-                                        </h2>
-                                    </div>
-                                    <div className="product-meta__wrapper">
-                                        <div className="product-meta">
-                                            <span className="product-reviews">2 отзыва</span>
-                                            <div className="product-icons">
-                                                <img className="product-add-to-favorites" id="product-add-to-favorites__heart-icon" src={assets.fi_heart}
-                                                     alt="Добавить в избранное"/>
-                                                <img className="product-add-to-favorites" id="product-add-to-favorites__share-icon" src={assets.share_alt_outlined}
-                                                     alt="Поделиться"/>
+                                        <div className="product-title-and-price__container">
+                                            <div className="product-title-and-price__wrapper">
+                                                <span className="product-reviews">
+                                                    2 отзыва
+                                                </span>
+                                                <img
+                                                    className="product-add-to-favorites__heart-icon"
+                                                    src={assets.fi_heart}
+                                                    alt="Добавить в избранное"
+                                                />
+                                                <img
+                                                    className="product-add-to-favorites__share-icon"
+                                                    src={assets.share_alt_outlined}
+                                                    alt="Поделиться"
+                                                />
+                                            </div>
+                                        </div>
+                                        <span className="product-price">
+                                            25.000 ₸
+                                        </span>
+                                        <div className="product-color">
+                                            <span className="product-color__text" id="product-color__text-1">
+                                                Цвет:
+                                            </span>
+                                            <div className="product-color__color-palette">
+                                                <button className="product-color__color-palette--button">
+                                                    <a className="product-color__color-palette--button-link" href="#">
+                                                        &nbsp;
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="product-color">
+                                            <span className="product-color__text" id="product-color__text-2">Размер:</span>
+                                            <button className="product-size___btn">
+                                                <a className="product-size__btn-link" href="#">One Size</a>
+                                            </button>
+                                        </div>
+                                        <a className="size-guide" href="#">Параметры размера</a>
+                                        <div className="delivery-services__container">
+                                            <div className="delivery-services__wrapper">
+                                                <div className="delivery-services__case">
+                                                    <img
+                                                        className="delivery-services__courier-case--image"
+                                                        src={assets.delivery_car_icon}
+                                                        alt="delivery services case image"
+                                                    />
+                                                    <p className="delivery-services__courier-case--text">
+                                                        Курьером до двери - от
+                                                        <span className="delivery-services__case--text-color">
+                                                            &nbsp;50 000 ₸&nbsp;
+                                                        </span>
+                                                        бесплатно
+                                                    </p>
+                                                </div>
+                                                <div className="delivery-services__sdek-case">
+                                                    <img
+                                                        className="delivery-services__sdek-case--image"
+                                                        src={assets.delivery_station_icon}
+                                                        alt="delivery services sdek case image"
+                                                    />
+                                                    <p className="delivery-services__sdek-case--text">
+                                                        Доставка до пункта выдачи Сдэк - от<br/>
+                                                        <span
+                                                            className="delivery-services__sdek-case--text-color"
+                                                        >
+                                                            30 000 ₸&nbsp;
+                                                        </span>
+                                                        бесплатно
+                                                    </p>
+                                                </div>
+                                                <div className="delivery-services__counter-button--container">
+                                                    <div className="delivery-services__counter-button--wrapper">
+                                                        <div className="delivery-services__counter-button--case">
+                                                            <button className="delivery-services__counter-button">
+                                                                <a className="delivery-services__counter-button-link">
+                                                                    <img className="delivery-services__counter-button-image" src={assets.minus_logo} alt="delivery services minus logo" />
+                                                                </a>
+                                                            </button>
+                                                            <p className="delivery-services__counter-value">
+                                                                 <span className="delivery-services__counter-value--text">1</span>
+                                                            </p>
+                                                            <button className="delivery-services__counter-button">
+                                                                 <a className="delivery-services__counter-button-link">
+                                                                     <img className="delivery-services__counter-button-image" src={assets.plus_logo} alt="delivery services plus logo" />
+                                                                 </a>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="delivery-services__add-to-card--container">
+                                                        <div className="delivery-services__add-to-card--wrapper">
+                                                            <button className="delivery-services__add-to-card--button">
+                                                                <div className="delivery-services__add-to-card--button--wrapper">
+                                                                    <a className="delivery-services__add-to-card--button-link">
+                                                                        В корзину
+                                                                    </a>
+                                                                    <img className="delivery-services__add-to-card--button-image" src={assets.add_to_card_icon} alt="add to card button" />
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="product-price-reviews">
-                                    <span className="product-price">25.000 ₸</span>
-                                </div>
-                                <div className="product-color">
-                                    <span className="product-color__text" id="product-color__text-1">
-                                        Цвет:
-                                    </span>
-                                    <div className="product-color__color-palette">
-                                        <button className="product-color__color-palette--button">
-                                            <a className="product-color__color-palette--button-link" href="#">&nbsp;</a>
-                                        </button>
-                                    </div>
-                                </div>
-                                <p className="product-color">
-                                    <span className="product-color__text" id="product-color__text-2">
-                                        Размер:
-                                    </span>
-                                    <button className="product-size__btn">
-                                        <a className="product-size__btn-link" href="#">One Size</a>
-                                    </button>
-                                </p>
-                                <a className="size-guide" href="#">Параметры размера</a>
-                                <div className="delivery-services__container">
-                                    <div className="delivery-services__wrapper">
-                                        <div className="delivery-services__case">
-                                            <img
-                                                className="delivery-services__courier-case--image"
-                                                src={assets.delivery_car_icon}
-                                                alt="delivery services case image"
-                                            />
-                                            <p className="delivery-services__courier-case--text">
-                                                Курьером до двери - от
-                                                <span className="delivery-services__case--text-color">
-                                                    &nbsp;50 000 ₸&nbsp;
-                                                </span>
-                                                бесплатно
-                                            </p>
-                                        </div>
-                                        <div className="delivery-services__sdek-case">
-                                            <img
-                                                className="delivery-services__sdek-case--image"
-                                                src={assets.delivery_station_icon}
-                                                alt="delivery services sdek case image"
-                                            />
-                                            <p className="delivery-services__sdek-case--text">
-                                                Доставка до пункта выдачи Сдэк - от<br/>
-                                                <span className="delivery-services__sdek-case--text-color">
-                                                    30 000 ₸&nbsp;
-                                                </span>
-                                                бесплатно
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="product-quantity__wrapper">
-                                    <div className="product-quantity">
-                                        <button
-                                            className="product-quantity__button"
-                                            aria-label="Уменьшить количество"
-                                        >
-                                            −
-                                        </button>
-                                        <span>
-                                            1
-                                        </span>
-                                        <button
-                                            className="product-quantity__button"
-                                            aria-label="Увеличить количество"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                    <div className="product-card-addition">
-                                        <button
-                                            aria-label="Добавить товар в корзину"
-                                            className="product-card-addition__button"
-                                        >
-                                            <img
-                                                className="product-card-addition__button-image"
-                                                src={assets.add_to_card_icon}
-                                                alt="Иконка корзины"
-                                            />
-                                            <span className="product-card-addition__text">
-                                                В корзину
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                            <aside className="product-card__right-side">
+                            </div>
+                            <div className="product-card__right-side">
                                 <div className="product-card__right-side--container">
                                     <p className="product-card__right-side--text__header">
                                         Характеристики и описание
@@ -214,11 +242,11 @@ const ProductPage = () => {
                                         100% хлопок
                                     </p>
                                 </div>
-                            </aside>
-                        </section>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <section className="consumers-reviews">
+                <div className="consumers-reviews">
                     <div className="review-section">
                         <div className="review-left">
                             <h2 className="review-left__header">Отзывы</h2>
@@ -263,7 +291,7 @@ const ProductPage = () => {
                                     <div className="rating-summary">
                                         <div className="rating-score">5</div>
                                         <div className="rating-count">на основании 2 отзывов</div>
-                                        <div className="product-rating" id="product-rating-2">
+                                        <div className="product-rating product-rating-2">
                                             {[...Array(5)].map((_, i) => (
                                                 <img
                                                     key={i}
@@ -359,13 +387,15 @@ const ProductPage = () => {
                     <div className="review-left review-left__similar-goods">
                         <h2>Похожие товары</h2>
                     </div>
-                </section>
-                <section>
-                    <ProductList products={products_mini_hoodies_part1} />
-                    <ProductList products={products_mini_t_shirts_part_1} />
-                    <ProductList products={products_mini_sweatshirts_part1} />
-                </section>
-            </section>
+                </div>
+                <div className="product-page__simular-goods">
+                    <div className="product-page__simular-goods--container">
+                        {productListOptions.map((product) => (
+                            <ProductList products={product}/>
+                        ))}
+                    </div>
+                </div>
+            </div>
             <Footer/>
         </>
     );
